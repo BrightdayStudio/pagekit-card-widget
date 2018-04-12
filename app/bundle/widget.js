@@ -80,15 +80,17 @@
 	'use strict';
 
 	module.exports = {
-	  section: {
-	    label: 'Settings'
-	  },
-	  replace: false,
-	  props: ['widget', 'config', 'form'],
-
-	  created: function created() {
-	    this.$options.partials = this.$parent.$options.partials;
-	  }
+	    section: {
+	        label: 'Settings'
+	    },
+	    replace: false,
+	    props: ['widget', 'config', 'form'],
+	    data: function data() {
+	        return {};
+	    },
+	    created: function created() {
+	        this.$options.partials = this.$parent.$options.partials;
+	    }
 	};
 
 	window.Widgets.components['brightday-panelbox:settings'] = module.exports;
@@ -97,7 +99,7 @@
 /* 2 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n<div class=\"uk-grid pk-grid-large\" data-uk-grid-margin=\"\">\n    <div class=\"uk-flex-item-1 uk-form-horizontal uk-row-first\">\n        <div class=\"uk-form-row\">\n            <label for=\"form-title\" class=\"uk-form-label\">{{ 'Title' | trans }}</label>\n            <div class=\"uk-form-controls\">\n                <input id=\"form-title\" class=\"uk-form-width-large\" type=\"text\" name=\"title\" v-model=\"widget.title\" v-validate:required>\n                <p class=\"uk-form-help-block uk-text-danger\" v-show=\"form.title.invalid\">{{ 'Title cannot be blank.' | trans }}</p>\n            </div>\n        </div>\n        <div class=\"uk-form-row\">\n            <label class=\"uk-form-label\">{{ 'Header' | trans }}</label>\n            <div class=\"uk-form-controls\">\n                <input type=\"text\" class=\"uk-form-width-large\" v-model=\"image.header\">\n            </div>\n        </div>\n        <div class=\"uk-form-row\">\n            <label class=\"uk-form-label\">{{ 'Text' | trans}}</label>\n            <div class=\"uk-form-controls uk-form-width-large\">\n                <textarea rows=7 type=text v-model=\\ \"image.text\\\" class= \"uk-width-1-1 uk-form-width-large\"></textarea>\n                </div>\n    </div>\n    <div class=\"uk-form-row\">\n        <label class=\"uk-form-label\">{{ 'Image' | trans }}</label>\n        <div class=\"uk-form-controls uk-form-width-large\">\n            <input-image-meta :image.sync=\"image\" class=\"pk-image-max-height \"></input-image-meta>\n        </div>\n    </div>\n     <div class=\"uk-form-row\">\n        <label class=\"uk-form-label\">{{ 'Link' | trans }}</label>\n        <div class=\"uk-form-controls uk-form-width-large\">\n        <input id=\"form-link-link\" type=\"text\" class=\"uk-form-width-large\" v-model=\"image.link\" placeholder=\"Link text\">\n            <input-link id=\"form-link-url\" class=\"uk-form-width-large\" v-model=\"image.url\" :link.sync=\"image.url\"> </input-link>\n        </div>\n    </div>\n</div>\n\n\n<div class=\"pk-width-sidebar\">\n<partial name=\"settings\"></partial>\n</div>\n\n\n</div>\n\n\n\n";
+	module.exports = "\n<div class=\"uk-grid pk-grid-large\" data-uk-grid-margin=\"\">\n    <div class=\"uk-flex-item-1 uk-form-horizontal uk-row-first\">\n        <div class=\"uk-form-row\">\n            <label for=\"form-title\" class=\"uk-form-label\">{{ 'Title' | trans }}</label>\n            <div class=\"uk-form-controls\">\n                <input id=\"form-title\" class=\"uk-form-width-large\" type=\"text\" name=\"title\" v-model=\"widget.title\" v-validate:required>\n                <p class=\"uk-form-help-block uk-text-danger\" v-show=\"form.title.invalid\">{{ 'Title cannot be blank.' | trans }}</p>\n            </div>\n        </div>\n        <div class=\"uk-form-row\">\n            <label class=\"uk-form-label\">{{ 'Header' | trans }}</label>\n            <div class=\"uk-form-controls\">\n                <input type=\"text\" class=\"uk-form-width-large\" v-model=\"image.header\">\n            </div>\n        </div>\n        <div class=\"uk-form-row\">\n            <label class=\"uk-form-label\">{{ 'Text' | trans}}</label>\n            <div class=\"uk-form-controls uk-form-width-large\">\n                <textarea rows=7 type=text v-model= \"image.text\" class= \"uk-width-1-1 uk-form-width-large\"></textarea>\n                </div>\n    </div>\n    <div class=\"uk-form-row\">\n        <label class=\"uk-form-label\">{{ 'Image' | trans }}</label>\n        <div class=\"uk-form-controls uk-form-width-large\">\n            <input-image-meta :image.sync=\"image\" class=\"pk-image-max-height \"></input-image-meta>\n        </div>\n    </div>\n     <div class=\"uk-form-row\">\n        <label class=\"uk-form-label\">{{ 'Link' | trans }}</label>\n        <div class=\"uk-form-controls uk-form-width-large\">\n        <input id=\"form-link-link\" type=\"text\" class=\"uk-form-width-large\" v-model=\"image.link\" placeholder=\"Link text\">\n            <input-link id=\"form-link-url\" class=\"uk-form-width-large\" v-model=\"image.url\" :link.sync=\"image.url\"> </input-link>\n        </div>\n    </div>\n</div>\n\n\n<div class=\"pk-width-sidebar\">\n<partial name=\"settings\"></partial>\n</div>\n\n\n</div>\n\n\n\n";
 
 /***/ })
 /******/ ]);

@@ -17,7 +17,7 @@
         <div class="uk-form-row">
             <label class="uk-form-label">{{ 'Text' | trans}}</label>
             <div class="uk-form-controls uk-form-width-large">
-                <textarea rows=7 type=text v-model=\ "image.text\" class= "uk-width-1-1 uk-form-width-large"></textarea>
+                <textarea rows=7 type=text v-model= "image.text" class= "uk-width-1-1 uk-form-width-large"></textarea>
                 </div>
     </div>
     <div class="uk-form-row">
@@ -61,6 +61,10 @@
         },
         replace: false,
         props: ['widget', 'config', 'form'],
+        data() {
+            return {
+            }
+        },
         
          created() {
             this.$options.partials = this.$parent.$options.partials;
