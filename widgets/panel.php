@@ -5,12 +5,12 @@ use Pagekit\Application as App;
 return [
     'name' => 'brightday/panelbox',
 
-    'label' => 'Panel Box',
+    'label' => 'PanelBox',
 
     'events' => [
         'view.scripts' => function ($event, $scripts) use ($app) {
 
-            $scripts->register('widget', 'panelbox:app/bundle/widget.js', ['~widgets']);
+            $scripts->register('panelbox', 'panelbox:app/bundle/widget.js', ['~widgets']);
         }
     ],
 
@@ -20,6 +20,6 @@ return [
 
         if($images == null) $images = [];
 
-        return $app->view('widget/panel.php', compact('images', 'config'));
+        return $app->view('panelbox:views/widget/panel.php', compact('images', 'config'));
     }
 ];
