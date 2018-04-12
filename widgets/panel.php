@@ -10,7 +10,7 @@ return [
     'events' => [
         'view.scripts' => function ($event, $scripts) use ($app) {
 
-            $scripts->register('widget', 'widget:app/bundle/widget.js', ['~widgets']);
+            $scripts->register('widget', 'panelbox:app/bundle/widget.js', ['~widgets']);
         }
     ],
 

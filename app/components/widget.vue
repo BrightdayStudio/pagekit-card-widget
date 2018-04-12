@@ -1,48 +1,49 @@
 <template>
-
-    <div class="uk-grid pk-grid-large pk-width-sidebar-large" data-uk-grid-margin>
-        <div class="pk-width-content uk-form-stacked">
-
-            <div class="uk-form-row">
-
-             <div class="uk-form-row">
-                <label for="form-title" class="uk-form-label">{{ 'Title' | trans }}</label>
-                <div class="uk-form-controls">
-                    <input id="form-title" class="uk-form-width-large" type="text" name="title" v-model="widget.title" v-validate:required>
-                    <p class="uk-form-help-block uk-text-danger" v-show="form.title.invalid">{{ 'Title cannot be blank.' | trans }}</p>
-                </div>
+<div class="uk-grid pk-grid-large" data-uk-grid-margin="">
+    <div class="uk-flex-item-1 uk-form-horizontal uk-row-first">
+        <div class="uk-form-row">
+            <label for="form-title" class="uk-form-label">{{ 'Title' | trans }}</label>
+            <div class="uk-form-controls">
+                <input id="form-title" class="uk-form-width-large" type="text" name="title" v-model="widget.title" v-validate:required>
+                <p class="uk-form-help-block uk-text-danger" v-show="form.title.invalid">{{ 'Title cannot be blank.' | trans }}</p>
             </div>
-             
-             <div class="uk-form-row">
-                    <label class="uk-form-label">{{ 'Image' | trans }}</label>
-                    <div class="uk-form-controls">
-                        <input-image-meta :image.sync="image" class="pk-image-max-height"></input-image-meta>
-                    </div>
-                </div>
-                <div class="uk-form-row">
-                    <label class="uk-form-label">{{ 'Header' | trans }}</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-form-width-large" v-model="image.header">
-                    </div>
-                </div>
-                <div class="uk-form-row">
-                    <label class="uk-form-label">{{ 'Text' | trans}}</label>
-                    <div class="uk-form-controls">
-                        <v-editor :value.sync="image.text" :options="{markdown : post.data.markdown, height: 250}"></v-editor>
-                    </div>
-                </div>
-             
-             
-             
-             
-
-             
-
         </div>
-        <div class="pk-width-sidebar">
-            <partial name="settings"></partial>
+        <div class="uk-form-row">
+            <label class="uk-form-label">{{ 'Header' | trans }}</label>
+            <div class="uk-form-controls">
+                <input type="text" class="uk-form-width-large" v-model="image.header">
+            </div>
+        </div>
+        <div class="uk-form-row">
+            <label class="uk-form-label">{{ 'Text' | trans}}</label>
+            <div class="uk-form-controls uk-form-width-large">
+                <textarea rows=7 type=text v-model=\ "image.text\" class= "uk-width-1-1 uk-form-width-large"></textarea>
+                </div>
+    </div>
+    <div class="uk-form-row">
+        <label class="uk-form-label">{{ 'Image' | trans }}</label>
+        <div class="uk-form-controls uk-form-width-large">
+            <input-image-meta :image.sync="image" class="pk-image-max-height "></input-image-meta>
         </div>
     </div>
+     <div class="uk-form-row">
+        <label class="uk-form-label">{{ 'Link' | trans }}</label>
+        <div class="uk-form-controls uk-form-width-large">
+        <input id="form-link-link" type="text" class="uk-form-width-large" v-model="image.link" placeholder="Link text">
+            <input-link id="form-link-url" class="uk-form-width-large" v-model="image.url" :link.sync="image.url"> </input-link>
+        </div>
+    </div>
+</div>
+
+
+<div class="pk-width-sidebar">
+<partial name="settings"></partial>
+</div>
+
+
+</div>
+
+
 
 </template>
 
@@ -59,7 +60,11 @@
             label: 'Settings'
         },
         replace: false,
-        props: ['widget', 'config', 'form']
+        props: ['widget', 'config', 'form'],
+        
+         created() {
+            this.$options.partials = this.$parent.$options.partials;
+        }
 
     };
      

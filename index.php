@@ -16,6 +16,7 @@ return [
     'resources' => [
         'panelbox:' => ''
     ],
+    
 
     'widgets' => [
         'widgets/panel.php'
