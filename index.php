@@ -17,12 +17,6 @@ return [
         'panelbox:' => ''
     ],
     
-    'routes' => [
-        '/panelbox' => [
-            'name' => '@panelbox',
-            'controller' => 'brightday\\panelbox\\Controller\\panelboxController'
-        ]
-    ],
 
     'widgets' => [
         'widgets/panel.php'

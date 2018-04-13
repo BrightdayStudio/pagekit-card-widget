@@ -2,8 +2,8 @@
   "name": "brightday/panelbox",
   "version": "0.1.2",
   "type": "pagekit-extension",
-  "title": "Panel Box",
-  "description": "Add a panel to any position.",
+  "title": "PanelBox",
+  "description": "Add a widget section to any position.",
   "license": "MIT",
   "authors": [
     {

@@ -11,30 +11,33 @@
 				</div>
 			</div>
 
+<div v-for="panel in widget.data">
 
         <div class="uk-form-row">
             <label class="uk-form-label">{{ 'Header' | trans }}</label>
-            <div class="uk-form-controls"><input type="text" class="uk-form-width-large" v-model="widget.data.panel.header"></div>
+            <div class="uk-form-controls"><input type="text" class="uk-form-width-large" v-model="panel.header"></div>
             </div>
         
         <div class="uk-form-row">
             <label class="uk-form-label">{{ 'Text' | trans}}</label>
-            <div class="uk-form-controls uk-form-width-large"><textarea rows=7 type=text v-model= "widget.data.panel.text" class= "uk-width-1-1 uk-form-width-large"></textarea></div>
+            <div class="uk-form-controls uk-form-width-large"><textarea rows=7 type=text v-model= "panel.text" class= "uk-width-1-1 uk-form-width-large"></textarea></div>
         </div>
         
     <div class="uk-form-row">
         <label class="uk-form-label">{{ 'Image' | trans }}</label>
-        <div class="uk-form-controls uk-form-width-large"><input-image-meta :image.sync="widget.data.panel.image" class="pk-image-max-height"></input-image-meta></div>
+        <div class="uk-form-controls uk-form-width-large"><input-image-meta :image.sync="panel.image" class="pk-image-max-height"></input-image-meta></div>
     </div>
     
      <div class="uk-form-row">
         <label class="uk-form-label">{{ 'Link' | trans }}</label>
-        <div class="uk-form-controls uk-form-width-large"><input type="text" class="uk-form-width-large" v-model="widget.data.panel.link" placeholder="Link text"><input-link class="uk-form-width-large" v-model="widget.data.panel.url" :link.sync="image.url"> </input-link></div>
+        <div class="uk-form-controls uk-form-width-large">
+        <input type="text" class="uk-form-width-large" v-model="panel.link" placeholder="Link text">
+        <input-link class="uk-form-width-large" v-model="panel.url" :link.sync="panel.url"> </input-link></div>
     </div>
      </div>
 
     
-
+</div>
 
 
 
