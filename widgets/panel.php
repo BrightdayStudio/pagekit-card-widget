@@ -15,11 +15,11 @@ return [
     ],
 
     'render' => function ($widget) use ($app) {
-        $images = $widget->get('images');
+        $panel = $widget->get('panel');
         $config = $widget->get('config');
 
-        if($images == null) $images = [];
+        if($panel == null) $panel = [];
 
-        return $app->view('panelbox:views/widget/panel.php', compact('images', 'config'));
+        return $app->view('panelbox:views/widget/panel.php', compact('panel', 'config'));
     }
 ];

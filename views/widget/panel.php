@@ -1,4 +1,4 @@
-<?php foreach($images as $image): if($image == null) continue; ?>
+<?php foreach($panel as $panels): if($image == null) continue; ?>
 <section class="panelbox" >
           <div class=" flex colx2">
           
