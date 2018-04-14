@@ -2,7 +2,11 @@
 <div class=" flex colx2">
           
           <div class="txt">
-          	<h3><?= $panel['header'] ?></h3>
+              
+        <?php if ($panel['header']) : ?>
+            <h3><?= $panel['header'] ?></h3>
+         <?php endif ?>
+              
               <p><?= $panel['text'] ?></p>
                <p><a href="<?= $panel['url'] ?>"><?= $panel['link'] ?></a></p>
             </div>

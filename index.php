@@ -17,8 +17,8 @@ return [
         'panelbox:' => ''
     ],
     
-
     'widgets' => [
         'widgets/panel.php'
     ],
+
 ];

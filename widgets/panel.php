@@ -9,7 +9,6 @@ return [
 
     'events' => [
         'view.scripts' => function ($event, $scripts) use ($app) {
-
             $scripts->register('panelbox', 'panelbox:app/bundle/widget.js', ['~widgets']);
         }
     ],
