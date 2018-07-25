@@ -1,9 +1,9 @@
 {
-  "name": "brightday/panelbox",
+  "name": "brightday/card",
   "version": "0.1.2",
   "type": "pagekit-extension",
-  "title": "PanelBox",
-  "description": "Add a widget section to any position.",
+  "title": "Card",
+  "description": "Add a card section to any position.",
   "license": "MIT",
   "authors": [
     {

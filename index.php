@@ -3,22 +3,22 @@
 use Pagekit\Application;
 
 return [
-    'name' => 'panelbox',
+    'name' => 'card',
 
     'main' => function(Application $app) {
 
     },
 
     'autoload' => [
-        'brightday\\panelbox\\' => 'src'
+        'brightday\\card\\' => 'src'
     ],
 
     'resources' => [
-        'panelbox:' => ''
+        'card:' => ''
     ],
-    
+
     'widgets' => [
-        'widgets/panel.php'
+        'widgets/card.php'
     ],
 
 ];

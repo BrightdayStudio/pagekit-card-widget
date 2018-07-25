@@ -1,10 +1,10 @@
 <?php
 
-namespace brightday\panelbox\Controller;
+namespace brightday\card\Controller;
 
 use Pagekit\Application as App;
 
-class panelboxController
+class cardController
 {
     /**
     * @Access(admin=true)
